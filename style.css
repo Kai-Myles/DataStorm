@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 body {
     background-color: #292929;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #e8e8e8;
 }
 
 .box {
@@ -22,7 +22,6 @@ body {
 .box:hover {
     transform: scale(1.02);
 }
-
 
 #title {
     color: #e8e8e8;
@@ -58,64 +57,3 @@ body {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-=======
-body {
-    background-color: #292929;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.box {
-    border-radius: 25px;
-    padding: 5px;
-    font-family: 'Courier New', Courier, monospace;
-    width: 50%;
-    text-align: center;
-    margin: 50px auto;
-    animation: fadeIn 1s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-    text-decoration: none;
-}
-
-.box:hover {
-    transform: scale(1.02);
-}
-
-
-#title {
-    color: #e8e8e8;
-    background-image: linear-gradient(to right, #a0a0a0, #393939);
-}
-
-#title p {
-    color: #cecece;
-    font-size: 1.2em;
-    margin-top: 10px;
-    font-weight: lighter;
-}
-
-#changes {
-    color: #e8e8e8;
-    background-image: linear-gradient(to right, #a0a0a0, #393939);
-    margin: 20px auto;
-}
-
-#support {
-    color: #e8e8e8;
-    background-image: linear-gradient(to right, #a0a0a0, #393939);
-    margin: 20px auto;
-}
-
-#browse {
-    color: #e8e8e8;
-    background-image: linear-gradient(to right, #a0a0a0, #393939);
-    margin: 20px auto;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
->>>>>>> 34f0339c8c37849bbdc0128c2c7422530411dc1e
