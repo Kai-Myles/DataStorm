@@ -53,6 +53,12 @@ body {
     margin: 20px auto;
 }
 
+#music {
+    color: #e8e8e8;
+    background-image: linear-gradient(to right, #a0a0a0, #393939);
+    margin: 20px auto;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
