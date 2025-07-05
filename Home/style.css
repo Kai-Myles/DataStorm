@@ -4,10 +4,10 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background-color: #feefdc;
-    padding: 20px 40px;
+    padding: 0 40px;
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -15,25 +15,44 @@ header {
     opacity: 0;
     transform: translateY(-30px);
     animation: headerFadeIn 0.8s ease-out forwards;
+    position: relative;
+    width: 100%;
+    height: 65px;
+    min-height: 65px;
 }
 
 header h1 {
-    flex: 1;
-    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     margin: 0;
+    text-align: center;
+    width: max-content;
+    pointer-events: none; /* optional: allows clicks to pass through */
+    z-index: 1;
+}
+
+/* Position nav absolutely to the right */
+header nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
 }
 
 header a {
     display: flex;
     align-items: center;
-    gap: 16px;
-    justify-content: flex-end;
+    transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
 }
 
-nav {
-  display: flex;
-  gap: 20px;
-  align-items: center;
+header a:hover, nav a:hover {
+    transform: scale(1.12);
 }
 
 @keyframes headerFadeIn {
