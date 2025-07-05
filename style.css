@@ -1,5 +1,8 @@
 body {
     background-color:#f9f6f2 ;
+    /* Add padding-top to body so content is not hidden under the fixed header */
+    padding-top: calc(65px + 15px + 24px); /* header height + top offset + grid gap */
+    font-size: clamp(14px, 2vw, 18px);
 }
 
 header {
@@ -23,6 +26,8 @@ header {
     min-height: 65px;
     box-sizing: border-box;
     z-index: 100;
+    /* Add this to make header take up space for layout flow (for non-fixed layouts, but keep fixed for your design) */
+    /* position: relative; */
 }
 
 header h1 {
@@ -35,6 +40,7 @@ header h1 {
     width: max-content;
     pointer-events: none;
     z-index: 1;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
 }
 
 /* Position nav absolutely to the right */
@@ -67,10 +73,59 @@ header a:hover, nav a:hover {
 }
 
 /* Reusable fade-in animation utility */
+/* Grid container for fade-in squares */
+.fade-in-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 24px;
+    justify-items: center;
+    align-items: center;
+    /* Ensure grid is always below the header */
+    padding-top: calc(65px + 15px + 24px); /* header height + top offset + grid gap */
+    margin-top: 0;;
+}
+
+/* Fade-in squares */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease-out forwards;
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+    width: 160px;
+    min-width: 100px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Optional: add transition for hover effect */
+    transition: box-shadow 0.2s;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    background-color: #feefdc;
+    text-decoration: none;
+    color: #333;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+
+#sections a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+}
+
+.fade-in a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fade-in:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
 }
 
 @keyframes fadeInUp {
@@ -79,3 +134,31 @@ header a:hover, nav a:hover {
         transform: translateY(0);
     }
 }
+
+/* Responsive adjustments for header layout on small screens */
+@media (max-width: 600px) {
+    header {
+        padding: 0 10px;
+    }
+    header nav {
+        right: 10px;
+    }
+    .fade-in-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 12px;
+        padding-top: calc(65px + 15px + 12px);
+    }
+    .fade-in {
+        width: 90px;
+        min-width: 60px;
+        font-size: clamp(0.8rem, 4vw, 1.1rem);
+    }
+    header h1 {
+        font-size: clamp(1rem, 6vw, 1.5rem);
+        max-width: 60vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
