@@ -15,10 +15,14 @@ header {
     opacity: 0;
     transform: translateY(-30px);
     animation: headerFadeIn 0.8s ease-out forwards;
-    position: relative;
-    width: 100%;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    right: 15px;
     height: 65px;
     min-height: 65px;
+    box-sizing: border-box;
+    z-index: 100;
 }
 
 header h1 {
@@ -29,7 +33,7 @@ header h1 {
     margin: 0;
     text-align: center;
     width: max-content;
-    pointer-events: none; /* optional: allows clicks to pass through */
+    pointer-events: none;
     z-index: 1;
 }
 
