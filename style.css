@@ -86,10 +86,17 @@ header a:hover, nav a:hover {
     grid-template-columns: repeat(auto-fit, 160px);
     display: grid;
     place-items: center;
-    height: 200px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.movie {
+    display: inline-block;
+    height: auto;
     width: 160px;
     gap: 20px;
     margin: 15px;
+    padding: 10px;
     background-color: #feefdc;
     border-radius: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
@@ -101,6 +108,8 @@ header a:hover, nav a:hover {
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease-out forwards;
     justify-content: center;
+    vertical-align: top;
+    
 }
 
 
@@ -125,8 +134,9 @@ header a:hover, nav a:hover {
 .movie img {
     width: 75%;
     height: auto;
-    margin: 0px;
+    margin: 15px;
     border-radius: 15px;
+
 }
 
 .movie p {
