@@ -77,6 +77,30 @@ header a:hover, nav a:hover {
     display: grid;
     gap: 20px;
     padding: 30px;
+    justify-content: center;
+}
+
+
+
+.movies {
+    grid-template-columns: repeat(auto-fit, 160px);
+    display: grid;
+    place-items: center;
+    height: 200px;
+    width: 160px;
+    gap: 20px;
+    margin: 15px;
+    background-color: #feefdc;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 125%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    justify-content: center;
 }
 
 
@@ -98,6 +122,21 @@ header a:hover, nav a:hover {
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
+.movie img {
+    width: 75%;
+    height: auto;
+    margin: 0px;
+    border-radius: 15px;
+}
+
+.movie p {
+    margin: -2px;
+}
+
+.movie div {
+    display: inline-block;
+}
+
 #websites {
     font-size: 115% !important; 
 }
@@ -109,6 +148,7 @@ header a:hover, nav a:hover {
 a {
     text-decoration: none;
     color: #333;
+    display: inline-block;
 }
 
 @keyframes fadeInUp {
